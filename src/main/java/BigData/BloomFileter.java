@@ -1,5 +1,7 @@
 package BigData;
 
+import redis.clients.jedis.Jedis;
+
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class BloomFileter {private static final long serialVersionUID = -5221305273707291280L;

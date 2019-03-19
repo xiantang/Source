@@ -7,6 +7,12 @@
     <groupId>info.xiantang</groupId>
     <artifactId>info.xiantang</artifactId>
     <version>1.0-SNAPSHOT</version>
-
+    <dependencies>
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>2.7.0</version>
+        </dependency>
+    </dependencies>
 
 </project>
