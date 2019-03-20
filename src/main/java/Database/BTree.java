@@ -174,7 +174,7 @@ public class BTree<Key extends Comparable<Key>, Value>  {
         // 将当前节点切半
         h.m = M/2;
         for (int j = 0; j < M/2; j++)
-            // h的节点一般节点转移到t中
+            // h的后半节点转移到t的上
             t.children[j] = h.children[M/2+j];
         return t;
     }
