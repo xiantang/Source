@@ -3,7 +3,10 @@ package ClassLoader;
 import sun.misc.Launcher;
 import sun.reflect.Reflection;
 
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.Executors;
+
+import static com.sun.beans.finder.ClassFinder.findClass;
 
 public  class ClassLoader {
     protected Class<?> loadClass(String name, boolean resolve)
@@ -29,11 +32,9 @@ public  class ClassLoader {
                     // 如仍然无法加载 调用本身进行类加载
                     long t1 = System.nanoTime();
                     c = findClass(name);
-//                    StackOverflowError
-
-                    sun.misc.PerfCounter.getParentDelegationTime().addTime(t1 - t0);
-                    sun.misc.PerfCounter.getFindClassTime().addElapsedTimeFrom(t1);
-                    sun.misc.PerfCounter.getFindClasses().increment();
+                    getParentDelegationTime().addTime(t1 - t0);
+                    getFindClassTime().addElapsedTimeFrom(t1);
+                    getFindClasses().increment();
                 }
             }
             if (resolve) {

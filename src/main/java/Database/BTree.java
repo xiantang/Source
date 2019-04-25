@@ -1,4 +1,3 @@
-package Database;
 
 public class BTree<Key extends Comparable<Key>, Value>  {
     // 每个B-树的node最多有M-1个节点
