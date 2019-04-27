@@ -42,7 +42,7 @@ public class BloomFileter {private static final long serialVersionUID = -5221305
         if (bitSize < 0 || bitSize > Integer.MAX_VALUE) {
             throw new RuntimeException("位数太大溢出了，请降低误判率或者降低数据大小");
         }
-        client = jedis;
+        client = jedis;     
         this.key = key;
         this.rate = rate;
         seeds = rate.seeds;
